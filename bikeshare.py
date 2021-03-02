@@ -168,7 +168,7 @@ def load_data(city, month, day):
     df["month"] = df["Start Time"].dt.month
     df["StartHour"] = df["Start Time"].dt.hour
     df["startEnd"] = df["Start Station"] + '  -  ' + df["End Station"]
-    df["totalTime"] = df["End Time"] - df["Start Time"]
+    df["total"] = df["End Time"] - df["Start Time"]
     df["subscriber"] = df["User Type"] == "Subscriber"
     df["customer"] = df["User Type"] == "Customer"
     df["totalTime"] = df["End Time"] - df["Start Time"]
@@ -283,7 +283,7 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    totalTime = df["totalTime"]
+    totalTime = df["total"]
 
     mysum = df["totalTime"].sum()
 
