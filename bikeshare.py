@@ -246,7 +246,7 @@ def time_stats(df):
 
 
     hours = df["StartHour"]
-    print("the most common start hour is "+str(statistics.mode(hours)))
+    print("the most common start hour in "+str(city)+" is "+str(statistics.mode(hours)))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
